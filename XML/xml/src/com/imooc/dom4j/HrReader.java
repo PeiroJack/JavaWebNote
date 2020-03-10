@@ -1,7 +1,5 @@
 package com.imooc.dom4j;
 
-
-
 import java.util.List;
 
 import org.dom4j.Attribute;
@@ -12,7 +10,7 @@ import org.dom4j.io.SAXReader;
 
 public class HrReader {
 	public void readXml() {
-		String file = "C:\\Users\\12138\\eclipse-workspace\\xml\\src\\hr.xml";
+		String file = "D:/JavaWebNote/XML/xml/src/hr.xml";
 		SAXReader reader = new SAXReader();
 		try {
 			Document document = reader.read(file);
