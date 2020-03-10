@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 教学计划 -->
+<teching-plan>
+	<!-- 课程 -->
+	<course>
+		<!-- 课程名 -->
+		<course-name>大学英语</course-name>
+		<!-- 课时 -->
+		<class-hour>36</class-hour>
+		<!-- 考核方式 -->
+		<exam-form>考试</exam-form>
+	</course>
+	<course>
+		<course-name>高等数学</course-name>
+		<class-hour>70</class-hour>
+		<exam-form>考试</exam-form>
+	</course>
+	<course>
+		<course-name>计算机应用基础</course-name>
+		<class-hour>108</class-hour>
+		<exam-form>上机考试</exam-form>
+	</course>
+</teching-plan>
