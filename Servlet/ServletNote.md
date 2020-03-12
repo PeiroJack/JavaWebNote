@@ -10,3 +10,7 @@
 
 ![2](D:\JavaWebNote\Servlet\img\2.png)
 
+
+
+在Servlet中获取的参数是字符串类型，需要使用Integer.parseInt(String s)方法转换为整型再进
+行计算。
