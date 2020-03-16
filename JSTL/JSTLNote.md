@@ -113,6 +113,17 @@ EL判断字符串用 ==，不用equals
 
 `<c:forEach>`标签用于遍历集合（Collection）中的每一个对象
 
+**forEach标签用于遍历集合**
+
+```
+List companies = (List)request.getAttribute("companies");
+for(Company c : companies){
+	out.print("...");
+}
+```
+
+
+
 ```
 <c:forEach var="p" items="${persons}" varStatus="idx">
  第${idx.index + 1}位 <br/>
@@ -132,9 +143,60 @@ EL判断字符串用 ==，不用equals
 3.慕课网-www.imooc.com
 ```
 
+requestScope.months**一定要加${ }**
+
+```
+<c:forEach varStatus="idx" var="month" items="${requestScope.months }">
+		<h1>${idx.index+1 }--${month }</h1>
+	</c:forEach>
+```
 
 
 
+**fmt格式化标签库**
+
+fmt格式化标签库URI：http://java.sun.com/jsp/jstl/fmt
+
+格式化日期标签
+
+```
+<fmt:formatDate value="" pattern="">
+```
+
+格式化数字标签
+
+```
+<fmt:formatNumber value = "" pattern="">
+```
 
 
+
+```
+<!-- 
+	formatDate pattern
+	yyyy - 四位年
+	MM - 两位月
+	dd - 两位日
+	HH - 24小时制
+	hh - 12小时制
+	mm - 分钟
+	ss - 秒表
+	SSS - 毫秒
+ -->
+<%
+		request.setAttribute("amt", 1987654.326);
+		request.setAttribute("html", "<a href='index.htlm'>index</a>");
+		request.setAttribute("now", new java.util.Date());
+		request.setAttribute("nothing", null);
+	%>
+	<h2>${now }</h2>
+	<h2><fmt:formatDate value="${requestScope.now }" pattern="yyyy年MM月dd日HH时mm分ss秒SSS毫秒"/></h2>	
+	<h2>${amt }</h2>
+	<h2>¥<fmt:formatNumber value="${amt }" pattern="0,000.00"></fmt:formatNumber>元</h2>
+	<h2>null默认值${nothing }</h2>
+	<h2><c:out value="${nothing }" default="无"></c:out></h2>
+	<h2><c:out value="${html }" escapeXml="true"></c:out></h2>
+```
+
+![fmt格式化输出](D:\JavaWebNote\JSTL\fmt格式化输出.png)
 
